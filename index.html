@@ -231,7 +231,7 @@ footer .name { color: var(--ink); font-weight: 600; }
   <div class="wide trace-card">
     <div class="trace-head">
       <h2 class="trace-title">A real run on GitHub</h2>
-      <span class="small muted">7 Nov 2026 · private test repo · a planted off-by-one bug in <code>sum.ts</code></span>
+      <span class="small muted">Private test repo · a planted off-by-one bug in <code>sum.ts</code></span>
     </div>
     <ol class="trace" role="list">
       <li><span class="dot fail" aria-hidden="true">×</span><span class="what">CI failed</span><span class="detail"><span class="sha">46977d2</span> on PR #1</span><span class="t">+0:00</span></li>
@@ -378,7 +378,7 @@ footer .name { color: var(--ink); font-weight: 600; }
     <p>Each stage replaced a fake with the real thing, and had to pass before the next one began. Fakes have a dashed outline.</p>
     <ol class="ladder" role="list">
       <li>
-        <div class="stage">Routing<span>2 Nov</span></div>
+        <div class="stage">Routing<span>Server only</span></div>
         <div class="body">
           <div class="chips"><span class="chip real">real Postgres</span><span class="chip fake">fake host</span></div>
           <p class="res">11 of 11 tests, 10 runs in a row.</p>
@@ -425,25 +425,25 @@ footer .name { color: var(--ink); font-weight: 600; }
       <summary>All 17 verdicts</summary>
       <div class="detail-body">
         <div class="table-scroll"><table>
-          <thead><tr><th scope="col">Date</th><th scope="col">Commit</th><th scope="col">Verdict</th><th scope="col">Main finding</th></tr></thead>
+          <thead><tr><th scope="col">Commit</th><th scope="col">Verdict</th><th scope="col">Main finding</th></tr></thead>
           <tbody>
-            <tr><td>4 Nov</td><td><span class="sha">01cd294fc</span></td><td class="v no">NO-GO</td><td>CI text could reach an existing session that runs tools without asking</td></tr>
-            <tr><td>4 Nov</td><td><span class="sha">c1b1e9c21</span></td><td class="v no">NO-GO</td><td>The host could run a command from the PR checkout before the gate</td></tr>
-            <tr><td>4 Nov</td><td><span class="sha">fbca6b40c</span></td><td class="v no">NO-GO</td><td>PR-controlled code ran during Git checkout</td></tr>
-            <tr><td>5 Nov</td><td><span class="sha">bd03bfd73</span></td><td class="v no">NO-GO</td><td>Git could still run PR code outside the sandbox</td></tr>
-            <tr><td>5 Nov</td><td><span class="sha">82e717bdb</span></td><td class="v no">NO-GO</td><td>Git helper paths accepted unchecked; a submodule filter could run</td></tr>
-            <tr><td>5 Nov</td><td><span class="sha">041d6056a</span></td><td class="v no">NO-GO</td><td>Two host execution gaps; a data-loss warning regression</td></tr>
-            <tr><td>5 Nov</td><td><span class="sha">32de6c58c</span></td><td class="v no">NO-GO</td><td>Shutdown gaps</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">cb889aefa</span></td><td class="v no">NO-GO</td><td>A writer could outlive closing or deleting the workspace</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">ecc331467</span></td><td class="v no">NO-GO</td><td>Related writer-lifecycle gaps</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">19766add0</span></td><td class="v no">NO-GO</td><td>A detached test process escaped the resource limits</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">62e06d4dc</span></td><td class="v no">NO-GO</td><td>Still escaped; a Git index sync failure</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">a88f4c15f</span></td><td class="v no">NO-GO</td><td>Index catch-up could undo the owner's staging</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">ece2e36c8</span></td><td class="v go">GO</td><td>Auto-commit, with automatic tests off</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">7c0893709</span></td><td class="v no">NO-GO</td><td>Docker runner: the host followed a PR's symlinked <code>package.json</code></td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">b6e4c3ce1</span></td><td class="v no">NO-GO</td><td>Two archive-completion gaps</td></tr>
-            <tr><td>6 Nov</td><td><span class="sha">a0962ad32</span></td><td class="v no">NO-GO</td><td>A stopped input copy could outlive the run</td></tr>
-            <tr><td>7 Nov</td><td><span class="sha">e968eefad</span></td><td class="v go">GO</td><td>Docker test runner</td></tr>
+            <tr><td><span class="sha">01cd294fc</span></td><td class="v no">NO-GO</td><td>CI text could reach an existing session that runs tools without asking</td></tr>
+            <tr><td><span class="sha">c1b1e9c21</span></td><td class="v no">NO-GO</td><td>The host could run a command from the PR checkout before the gate</td></tr>
+            <tr><td><span class="sha">fbca6b40c</span></td><td class="v no">NO-GO</td><td>PR-controlled code ran during Git checkout</td></tr>
+            <tr><td><span class="sha">bd03bfd73</span></td><td class="v no">NO-GO</td><td>Git could still run PR code outside the sandbox</td></tr>
+            <tr><td><span class="sha">82e717bdb</span></td><td class="v no">NO-GO</td><td>Git helper paths accepted unchecked; a submodule filter could run</td></tr>
+            <tr><td><span class="sha">041d6056a</span></td><td class="v no">NO-GO</td><td>Two host execution gaps; a data-loss warning regression</td></tr>
+            <tr><td><span class="sha">32de6c58c</span></td><td class="v no">NO-GO</td><td>Shutdown gaps</td></tr>
+            <tr><td><span class="sha">cb889aefa</span></td><td class="v no">NO-GO</td><td>A writer could outlive closing or deleting the workspace</td></tr>
+            <tr><td><span class="sha">ecc331467</span></td><td class="v no">NO-GO</td><td>Related writer-lifecycle gaps</td></tr>
+            <tr><td><span class="sha">19766add0</span></td><td class="v no">NO-GO</td><td>A detached test process escaped the resource limits</td></tr>
+            <tr><td><span class="sha">62e06d4dc</span></td><td class="v no">NO-GO</td><td>Still escaped; a Git index sync failure</td></tr>
+            <tr><td><span class="sha">a88f4c15f</span></td><td class="v no">NO-GO</td><td>Index catch-up could undo the owner's staging</td></tr>
+            <tr><td><span class="sha">ece2e36c8</span></td><td class="v go">GO</td><td>Auto-commit, with automatic tests off</td></tr>
+            <tr><td><span class="sha">7c0893709</span></td><td class="v no">NO-GO</td><td>Docker runner: the host followed a PR's symlinked <code>package.json</code></td></tr>
+            <tr><td><span class="sha">b6e4c3ce1</span></td><td class="v no">NO-GO</td><td>Two archive-completion gaps</td></tr>
+            <tr><td><span class="sha">a0962ad32</span></td><td class="v no">NO-GO</td><td>A stopped input copy could outlive the run</td></tr>
+            <tr><td><span class="sha">e968eefad</span></td><td class="v go">GO</td><td>Docker test runner</td></tr>
           </tbody>
         </table></div>
         <p class="small muted">Mutation checks, where a bug is planted on purpose to see if the tests notice: routing lock 10 of 10 runs caught, Docker runner 34 of 34 (two after stronger tests), GitHub test harness 21 of 21.</p>
@@ -460,10 +460,10 @@ footer .name { color: var(--ink); font-weight: 600; }
     </div>
     <ul class="limits" role="list">
       <li><b>Small sample</b><span>Four real-model runs, each on one easy bug. They prove the wiring and the safety limits, not how well the agent handles hard failures.</span></li>
-      <li><b>macOS only</b><span>The agent needs macOS's sandbox. On other systems the failure waits for the developer.</span></li>
+      <li><b>macOS for the agent</b><span>The agent needs macOS's sandbox. macOS is Paradev's main platform; its Linux app is experimental and there is no Windows app yet. On Linux the failure still reaches the right pull request and waits there with a reason instead of starting an agent.</span></li>
       <li><b>Tests</b><span>Bun projects only, packages only from the npm registry, run on Linux.</span></li>
       <li><b>Pull requests</b><span>Same-repo PRs only. Forks behave as before.</span></li>
-      <li><b>Not upstream</b><span>Built on Paradev's code from 2 Nov 2026. Updating it to the latest version comes next.</span></li>
+      <li><b>Not upstream</b><span>Built on an earlier version of Paradev's code. Updating it to the latest version comes next.</span></li>
     </ul>
   </div>
 </section>
