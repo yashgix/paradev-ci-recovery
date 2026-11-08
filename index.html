@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Paradev CI Recovery</title>
-<meta name="description" content="A proposed contribution to Paradev: a failed CI run reaches its pull request once, a restricted agent prepares a change there, and the developer decides what gets pushed.">
+<meta name="description" content="A proposed contribution to Paradev: a failed CI run reaches its pull request, a restricted agent edits the code there, Paradev commits it, and the developer only reviews and pushes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -206,7 +206,7 @@ footer .name { color: var(--ink); font-weight: 600; }
 }
 </style>
 <meta property="og:title" content="Paradev CI Recovery">
-<meta property="og:description" content="A proposed contribution to Paradev: a failed CI run reaches its pull request once, a restricted agent prepares a change there, and the developer decides what gets pushed.">
+<meta property="og:description" content="A proposed contribution to Paradev: a failed CI run reaches its pull request, a restricted agent edits the code there, Paradev commits it, and the developer only reviews and pushes.">
 <meta property="og:type" content="article">
 <meta name="color-scheme" content="light">
 <style>body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }</style>
@@ -217,7 +217,7 @@ footer .name { color: var(--ink); font-weight: 600; }
   <div class="col stack">
     <p class="eyebrow">Case study</p>
     <h1>Paradev CI Recovery</h1>
-    <p class="lede">When CI fails on a pull request, Paradev can start a coding agent to deal with it. I changed how that works: the failure now reaches its own pull request once, a locked-down agent prepares a change there, and the developer decides what gets pushed.</p>
+    <p class="lede">When CI fails on a pull request, Paradev can start a coding agent. But it started one agent for every failing workflow, and none of them on the pull request's branch, so their work couldn't land. Now one agent works on the right pull request automatically: it reads the failure and edits the code, and Paradev commits the change and can test it. The developer's only step is a quick review and push.</p>
     <div class="meta">
       <span class="status">Proposed contribution · not merged</span>
       <span><b>Yash Gupta</b> · November 2026</span>
@@ -238,10 +238,10 @@ footer .name { color: var(--ink); font-weight: 600; }
       <li><span class="dot" aria-hidden="true">2</span><span class="what">Webhook checked</span><span class="detail">Signature verified, matched to PR #1</span></li>
       <li><span class="dot" aria-hidden="true">3</span><span class="what">Agent edited</span><span class="detail">One line of <code>sum.ts</code>, for $0.024</span></li>
       <li><span class="dot" aria-hidden="true">4</span><span class="what">Committed locally</span><span class="detail"><span class="sha">1291bf3</span>, tests passed in Docker</span></li>
-      <li><span class="dot you" aria-hidden="true">5</span><span class="what">I reviewed and pushed</span><span class="detail">Paradev never pushes</span><span class="t">+3:02</span></li>
+      <li><span class="dot you" aria-hidden="true">5</span><span class="what">I reviewed and pushed</span><span class="detail">The one manual step</span><span class="t">+3:02</span></li>
       <li><span class="dot pass" aria-hidden="true">✓</span><span class="what">Later CI passed on 1291bf3</span><span class="detail">GitHub's own run</span><span class="t">+3:23</span></li>
     </ol>
-    <p class="trace-foot">Times from GitHub's webhook log, review included. "Later CI passed on 1291bf3" is Paradev's own wording. It never says "fixed", because a passing run only proves that CI passed on that commit.</p>
+    <p class="trace-foot">From failed CI to passing CI in under three and a half minutes, my review included (times from GitHub's webhook log). "Later CI passed on 1291bf3" is Paradev's own wording. It never says "fixed", because a passing run only proves that CI passed on that commit.</p>
   </div>
 </div>
 
@@ -461,7 +461,7 @@ footer .name { color: var(--ink); font-weight: 600; }
     <ul class="limits" role="list">
       <li><b>Small sample</b><span>Four real-model runs, each on one easy bug. They prove the wiring and the safety limits, not how well the agent handles hard failures.</span></li>
       <li><b>macOS for the agent</b><span>The agent needs macOS's sandbox. macOS is Paradev's main platform; its Linux app is experimental and there is no Windows app yet. On Linux the failure still reaches the right pull request and waits there with a reason instead of starting an agent.</span></li>
-      <li><b>Tests</b><span>Bun projects only, packages only from the npm registry, run on Linux.</span></li>
+      <li><b>Tests</b><span>Off by default in this version; planned to be on whenever Docker is available. Bun projects only, packages only from the npm registry, run on Linux.</span></li>
       <li><b>Pull requests</b><span>Same-repo PRs only. Forks behave as before.</span></li>
       <li><b>Not upstream</b><span>Built on an earlier version of Paradev's code. Updating it to the latest version comes next.</span></li>
     </ul>

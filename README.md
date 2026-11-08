@@ -6,8 +6,8 @@ A proposed contribution to [ParadevAI/Paradev](https://github.com/ParadevAI/Para
 [#7522](https://github.com/ParadevAI/Paradev/issues/7522) and
 [#8721](https://github.com/ParadevAI/Paradev/issues/8721). It is not merged upstream.
 
-When CI fails on a pull request, the failure now reaches that pull request once, a restricted coding agent prepares
-a change in its workspace, the change is committed locally, and the developer decides what gets pushed.
+When CI fails on a pull request, one restricted coding agent now works on that pull request automatically: it reads
+the failure and edits the code, Paradev commits the change, and the developer's only step is a quick review and push.
 
 This repository holds only the case study page. The source will be linked here when the first pull request is ready.
 
